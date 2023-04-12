@@ -1,0 +1,13 @@
+/* Write your CSS here */
+.del-btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: transparent;
+  background-color: transparent;
+  padding: 0;
+  justify-self: flex-end;
+}
+.del-btn img {
+  max-width: 100%;
+}

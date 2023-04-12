@@ -1,0 +1,51 @@
+/* Write your CSS here */
+.money-details-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  padding-left: 0;
+}
+.details-item {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border-radius: 10px;
+  flex-grow: 1;
+  max-width: 300px;
+}
+.balance {
+  background-color: #ecfccb;
+  border: 1px solid #84cc16;
+}
+.income {
+  background-color: #cffafe;
+  border: 1px solid #06b6d4;
+}
+.expenses {
+  background-color: #ede9fe;
+  border: 1px solid #7c3aed;
+}
+.details-icon {
+  width: 40px;
+}
+.details-icon img {
+  max-width: 100%;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.details p {
+  margin-block: 2px;
+}
+.details-title {
+  font-size: 0.7rem;
+}
+.details-amount {
+  font-size: 1.15rem;
+  font-weight: 500;
+}

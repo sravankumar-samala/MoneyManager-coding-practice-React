@@ -1,0 +1,97 @@
+/* Write your CSS here */
+.container {
+  min-height: 100vh;
+  padding: 2em;
+}
+.cont-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.profile-container {
+  padding: 2em;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+.greeting-title {
+  color: #0b69ff;
+  font-weight: 600;
+}
+.money-transactions {
+  display: flex;
+  justify-content: stretch;
+  /* gap: 2em; */
+}
+.transactions-form,
+.transactions-history {
+  width: 50%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form input,
+select {
+  max-width: 60%;
+  border: 1px solid #7e858e;
+  outline: transparent;
+  border-radius: 5px;
+  padding: 0.5em;
+
+  margin-bottom: 1em;
+}
+.form input::placeholder {
+  color: rgb(178, 178, 178);
+}
+.form label {
+  color: #7e858e;
+  font-size: 0.88rem;
+  margin-bottom: 7px;
+}
+select option {
+  border-radius: 0;
+  padding: 1em 0;
+  font-size: 1.1rem;
+}
+.select option:hover {
+  background-color: brown;
+}
+.submit-btn {
+  width: fit-content;
+  padding: 0.5em 1.1em;
+  border-radius: 5.5px;
+  border: none;
+  background-color: #0b69ff;
+  color: white;
+}
+.list-container {
+  border: 1px solid #a0a7af;
+
+  border-radius: 5px;
+}
+.history-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-block: 0;
+}
+.history-list > *:not(:last-child) {
+  border-bottom: 1px solid #a0a7af;
+}
+.history-item {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  padding: 0.5em;
+  width: 100%;
+}
+.history-header {
+  font-weight: 500;
+  border-bottom: 1px solid #a0a7af;
+}
+.history-list li p,
+.history-header p {
+  min-width: 100px;
+  margin-block: 0;
+}
