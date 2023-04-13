@@ -27,7 +27,7 @@ class MoneyManager extends Component {
   state = {
     title: '',
     amount: '',
-    type: 'INCOME',
+    type: 'Income',
     historyList: [],
     balance: 0,
     income: 0,
@@ -38,7 +38,7 @@ class MoneyManager extends Component {
 
   onAddAmount = event => this.setState({amount: parseInt(event.target.value)})
 
-  onSelectType = event => this.setState({type: event.target.value})
+  onSelectType = event => this.setState({type: event.target.textContent})
 
   onSubmit = event => {
     event.preventDefault()
@@ -56,7 +56,7 @@ class MoneyManager extends Component {
     let newIncome = income
     let newExpenses = expenses
 
-    if (type === 'INCOME') {
+    if (type === 'Income') {
       newBalance += amount
       newIncome += amount
     } else {
@@ -68,8 +68,8 @@ class MoneyManager extends Component {
       historyList: [...prev.historyList, newTransaction],
       title: '',
       amount: '',
-      type: 'INCOME',
-      balance: newBalance,
+      type: 'Income',
+      balance: newBalance < 0 ? 0 : newBalance,
       income: newIncome,
       expenses: newExpenses,
     }))
@@ -82,7 +82,7 @@ class MoneyManager extends Component {
     let newIncome = income
     let newExpenses = expenses
 
-    if (type === 'INCOME') {
+    if (type === 'Income') {
       newBalance -= amount
       newIncome -= amount
     } else {
