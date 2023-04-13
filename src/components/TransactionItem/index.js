@@ -5,6 +5,18 @@ import './index.css'
 const TransactionItem = props => {
   const {historyObject, onDelete} = props
   const {title, amount, type, id} = historyObject
+  let typeText
+  switch (type) {
+    case 'INCOME':
+      typeText = 'Income'
+      break
+    case 'EXPENSES':
+      typeText = 'Expenses'
+      break
+    default:
+      typeText = 'Income'
+      break
+  }
 
   const deleteHistoryItem = () => onDelete(id, type, amount)
 
@@ -12,7 +24,7 @@ const TransactionItem = props => {
     <li className="history-item">
       <p>{title}</p>
       <p>Rs {amount}</p>
-      <p>{type}</p>
+      <p>{typeText}</p>
       <button
         className="del-btn"
         type="button"

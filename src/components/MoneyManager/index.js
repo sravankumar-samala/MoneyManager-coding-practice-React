@@ -38,19 +38,42 @@ class MoneyManager extends Component {
 
   onAddAmount = event => this.setState({amount: parseInt(event.target.value)})
 
-  onSelectType = event => this.setState({type: event.target.textContent})
+  onSelectType = event => {
+    // let type
+    // switch (event.target.value) {
+    //   case 'INCOME':
+    //     type = 'Income'
+    //     break
+    //   case 'EXPENSES':
+    //     type = 'Expenses'
+    //     break
+    //   default:
+    //     type = 'Income'
+    // }
+    // if (event.target.value === 'INCOME') {
+    //   type = 'Income'
+    // } else if (event.target.value === 'EXPENSES') {
+    //   type = 'Expenses'
+    // }
+    this.setState({
+      type: event.target.value,
+    })
+  }
 
   onSubmit = event => {
     event.preventDefault()
 
     const {title, amount, type, balance, income, expenses} = this.state
 
-    const newTransaction = {
-      id: uuidV4(),
-      title,
-      amount,
-      type,
-    }
+    const newTransaction =
+      title && amount
+        ? {
+            id: uuidV4(),
+            title,
+            amount,
+            type,
+          }
+        : null
 
     let newBalance = balance
     let newIncome = income
@@ -63,16 +86,17 @@ class MoneyManager extends Component {
       newBalance -= amount
       newExpenses += amount
     }
-
-    this.setState(prev => ({
-      historyList: [...prev.historyList, newTransaction],
-      title: '',
-      amount: '',
-      type: 'Income',
-      balance: newBalance < 0 ? 0 : newBalance,
-      income: newIncome,
-      expenses: newExpenses,
-    }))
+    if (newTransaction)
+      this.setState(prev => ({
+        historyList: [...prev.historyList, newTransaction],
+        title: '',
+        amount: '',
+        type: 'Income',
+        balance: newBalance < 0 ? 0 : newBalance,
+        income: newIncome,
+        expenses: newExpenses,
+      }))
+    console.log(type)
   }
 
   onDelete = (id, type, amount) => {
