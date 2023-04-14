@@ -38,27 +38,10 @@ class MoneyManager extends Component {
 
   onAddAmount = event => this.setState({amount: parseInt(event.target.value)})
 
-  onSelectType = event => {
-    // let type
-    // switch (event.target.value) {
-    //   case 'INCOME':
-    //     type = 'Income'
-    //     break
-    //   case 'EXPENSES':
-    //     type = 'Expenses'
-    //     break
-    //   default:
-    //     type = 'Income'
-    // }
-    // if (event.target.value === 'INCOME') {
-    //   type = 'Income'
-    // } else if (event.target.value === 'EXPENSES') {
-    //   type = 'Expenses'
-    // }
+  onSelectType = event =>
     this.setState({
       type: event.target.value,
     })
-  }
 
   onSubmit = event => {
     event.preventDefault()
@@ -171,7 +154,7 @@ class MoneyManager extends Component {
                 <label htmlFor="number">AMOUNT</label>
                 <input
                   id="number"
-                  type="number"
+                  type="text"
                   value={amount}
                   placeholder="AMOUNT"
                   onChange={this.onAddAmount}
